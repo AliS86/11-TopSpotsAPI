@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="topspotApp">
+<head>
+  <meta charset="UTF-8">
+  <title>SD TopSpots</title>
+<!-- bower:css -->
+<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+<!-- endbower -->
+
+<!-- inject:css -->
+<link rel="stylesheet" href="/app/styles/styles.css">
+<!-- endinject -->
+</head>
+
+<body ng-controller="mainController as vm">
+<table class="table table-striped">
+       <tr>
+           <th>Name</th>
+           <th>Description</th>
+           <th>Location</th>
+       </tr>
+      
+       <tr ng-repeat="data in vm.topSpots ">
+       <!-- getting the names -->
+           <td>{{data.name}}</td>
+           <!-- getting the description -->
+           <td>{{data.description}}</td>
+           <td>
+           <!-- getting the location -->
+           <a ng-href="https://www.google.com/maps?q={{data.location[0]}},{{data.location[1]}}" class="btn btn-primary" >Open Map</a>
+           </td>
+       </tr>
+   </table>
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+<script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
+<!-- endbower -->
+
+<!-- inject:js -->
+<script src="/app/app.js"></script>
+<script src="/app/main.controller.js"></script>
+<!-- endinject -->
+</body>
+</html>
